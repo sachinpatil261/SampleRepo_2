@@ -10,8 +10,11 @@ pipeline {
 				}
 				stage('Build') {
 				steps{
-											
-						"\"${tool 'msbuild'}\" /p:Version=${BUILD_NUMBER}  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot
+						bat """
+						cd ${projectName}						
+						dotnet publish -c Release /p:Version=${BUILD_NUMBER} /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot
+						"""					
+						  
 					
 						}
 				}				
