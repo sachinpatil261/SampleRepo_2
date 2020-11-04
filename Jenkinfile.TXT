@@ -12,7 +12,7 @@ pipeline {
 				steps{
 						bat """
 						cd ${projectName}
-						"\"${tool 'MSBuild'}\" /p:Version=${BUILD_NUMBER}  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot
+						"\"${tool 'msbuild'}\" /p:Version=${BUILD_NUMBER}  /p:DeployOnBuild=true /p:DeployDefaultTarget=WebPublish /p:WebPublishMethod=FileSystem /p:SkipInvalidConfigurations=true /t:build /p:Configuration=Release /p:Platform=\"Any CPU\" /p:DeleteExistingFiles=True /p:publishUrl=c:\\inetpub\\wwwroot
 						"""
 						}
 				}				
