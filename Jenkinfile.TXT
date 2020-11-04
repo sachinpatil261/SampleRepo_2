@@ -1,6 +1,6 @@
 //def ReleaseDir = "c:\inetpub\wwwroot"
-pipeline {
 String projectName = "Sample_Jenkin_Web_1"
+pipeline {
 			agent any
 			stages {
 				stage('Source'){
